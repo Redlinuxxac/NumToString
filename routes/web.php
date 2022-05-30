@@ -1,10 +1,10 @@
 <?php
 
-use Redlinux\Conver\Conver;
+use Redlinux\NumTostring\NumTostring\NumTostring;
 use Illuminate\Support\Facades\Route;
-use Redlinux\Conver\Conver\ConverFacade;
+use Redlinux\NumTostring\NumTostring\NumTostringFacade;
 
 Route::get('/cal', function(){
     $nu=5;
-    return Conver::string($nu);
+    return NumTostring::string($nu);
 });
