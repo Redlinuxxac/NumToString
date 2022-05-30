@@ -1,2 +1,2 @@
 # NumToString
-Convertido e numero a letras
+Convertido e numero a letras y viseversa
