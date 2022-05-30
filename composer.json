@@ -1,5 +1,5 @@
 {
-    "name": "reddatasrd/conver",
+    "name": "reddatasrd/NumTostring",
     "description": "Comvertit de numero a letra.",
     "type": "library",
     "license": "mit",
@@ -11,13 +11,13 @@
     ],
     "autoload": {
         "psr-4": {
-            "Reddatasrd\\Conver\\": "src/"
+            "Reddatasrd\\NumTostring\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Reddatasrd\\Conver\\ConverServiceProvider"
+                "Reddatasrd\\NumTostring\\NumTostringServiceProvider"
             ]
         }
     },

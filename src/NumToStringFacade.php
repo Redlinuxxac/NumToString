@@ -1,13 +1,13 @@
 <?php
 
-namespace Reddatasrd\Conver;
+namespace Reddatasrd\NumTostring;
 
 use illuminate\Support\Facades\Facade;
 
-class ConverFacade extends Facade
+class NumTostringFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return "Conver";
+        return "NumTostring";
     }
 }

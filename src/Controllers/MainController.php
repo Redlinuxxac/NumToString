@@ -1,6 +1,6 @@
 <?php
 
-namespace Reddatasrd\Conver\Controllers;
+namespace Reddatasrd\NumTostring\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

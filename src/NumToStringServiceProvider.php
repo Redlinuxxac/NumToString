@@ -1,11 +1,11 @@
 <?php
 
-namespace Reddatasrd\Conver;
+namespace Reddatasrd\NumTostring;
 
-use Redlinux\Conver\Conver;
+use Redlinux\NumTostring\NumTostring;
 use Illuminate\Support\ServiceProvider;
 
-class ConverServiceProvider extends ServiceProvider
+class NumTostringServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
@@ -17,15 +17,15 @@ class ConverServiceProvider extends ServiceProvider
         //rutas
         $this->registerRoutes();
         //controlador
-        $this->app->make('Reddatasrd\Conver\Controllers\MainController');
+        $this->app->make('Reddatasrd\NumTostring\Controllers\MainController');
 
          //Resources 
          $this->registerResources();
          //Migrations 
          $this->registerMigrations();
          //clase broma
-         $this->app->bind('Conver', function($app){
-             return new Conver();
+         $this->app->bind('NumTostring', function($app){
+             return new NumTostring();
          });
     }
 
@@ -49,10 +49,10 @@ class ConverServiceProvider extends ServiceProvider
     protected function registerResources(): void
     {        
         //Load the views
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'conver');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'NumTostring');
         //Load language translations...
-        $this->loadTranslationsFrom(resource_path('lang/vendor/conver'), 'conver');
-        $this->loadJsonTranslationsFrom(resource_path('lang/vendor/conver'), 'conver');
+        $this->loadTranslationsFrom(resource_path('lang/vendor/NumTostring'), 'NumTostring');
+        $this->loadJsonTranslationsFrom(resource_path('lang/vendor/NumTostring'), 'NumTostring');
     }
     protected function registerMigrations():void
     {

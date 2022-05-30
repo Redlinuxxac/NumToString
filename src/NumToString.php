@@ -1,10 +1,10 @@
 <?php
 /**
- * Libreria de Conversion de numeros
+ * Libreria de NumTostringsion de numeros
  */
-namespace Redlinux\Conver;
+namespace Redlinux\NumTostring;
 
-class Conver
+class NumTostring
 {
     /**
      * Cententenas
@@ -140,7 +140,7 @@ class Conver
             // '*---> Validación si se pasa de 100 millones
 
             if ($Numero >= 1000000000) {
-                $letras = "Error en Conversión a Letras";
+                $letras = "Error en NumTostringsión a Letras";
                 $Numero = 0;
                 $Decimales = 0;
             }
@@ -297,7 +297,7 @@ class Conver
                 // $letras .= (string) $tempo;
                 // $letras .= (string) "centavos";
             } else {
-                if (($letras <> "Error en Conversión a Letras") and (strlen(Trim($letras)) > 0)) {
+                if (($letras <> "Error en NumTostringsión a Letras") and (strlen(Trim($letras)) > 0)) {
                     $letras .= (string)" ";
                 }
             }
@@ -314,7 +314,7 @@ class Conver
     }
 
     /**
-     * favor de teclear a mano la cantidad numerica a convertir y asignarla a $tt
+     * favor de teclear a mano la cantidad numerica a NumTostringtir y asignarla a $tt
      */
     public function string($n)
     {
