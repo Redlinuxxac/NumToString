@@ -6,6 +6,11 @@ namespace Redlinux\Conver;
 
 class Conver
 {
+    /**
+     * Cententenas
+     * input $VCentena
+     * return $Numeros
+     */
     private function Centenas($VCentena)
     {
         $Numeros[0] = "Cero";
@@ -48,7 +53,11 @@ class Conver
             return $Numeros[$VCentena];
         }
     }
-
+    /**
+     * unidad
+     * $VUnidad
+     * return $tempo
+     */
     private function Unidades($VUnidad)
     {
         $Numeros[0] = "Cero";
@@ -304,7 +313,9 @@ class Conver
         return $resultado;
     }
 
-    //favor de teclear a mano la cantidad numerica a convertir y asignarla a $tt
+    /**
+     * favor de teclear a mano la cantidad numerica a convertir y asignarla a $tt
+     */
     public function string($n)
     {
         $tt = $n;
