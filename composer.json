@@ -1,0 +1,32 @@
+{
+    "name": "reddatasrd/conver",
+    "description": "Comvertit de numero a letra.",
+    "type": "library",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Edwin Rafael Rosario De La Rosa",
+            "email": "rosarioedwinac@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Reddatasrd\\Conver\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Reddatasrd\\Conver\\ConverServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {        
+        "php": "^7.3|^8.0"
+    },
+    
+    "require-dev": {
+        "phpunit/phpunit": "^9.5.10"
+    }
+}
