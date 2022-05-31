@@ -11,7 +11,7 @@ class NumTostring
      * input $VCentena
      * return $Numeros
      */
-    public  function Centenas($VCentena)
+    private static  function Centenas($VCentena)
     {
         $Numeros[0] = "Cero";
         $Numeros[1] = "Uno";
@@ -58,7 +58,7 @@ class NumTostring
      * $VUnidad
      * return $tempo
      */
-    public  function Unidades($VUnidad)
+    private static  function Unidades($VUnidad)
     {
         $Numeros[0] = "Cero";
         $Numeros[1] = "Uno";
@@ -93,7 +93,7 @@ class NumTostring
         return $tempo;
     }
 
-    public  function Decenas($VDecena)
+    private static  function Decenas($VDecena)
     {
         $Numeros[0] = "Cero";
         $Numeros[1] = "Uno";
@@ -127,7 +127,7 @@ class NumTostring
         return $tempo;
     }
 
-    public  function NumerosALetras($Numero)
+    private static  function NumerosALetras($Numero)
     {
 
 
@@ -150,7 +150,7 @@ class NumTostring
                 if ((Intval($Numero / 100000000) == 1) and (($Numero - (Intval($Numero / 100000000) * 100000000)) < 1000000)) {
                     $letras .= (string)"Cien Millones ";
                 } else {
-                    $letras = $letras & $this->Centenas(Intval($Numero / 100000000));
+                    $letras = $letras & self::Centenas(Intval($Numero / 100000000));
                     if ((Intval($Numero / 100000000) <> 1) and (Intval($Numero / 100000000) <> 5) and (Intval($Numero / 100000000) <> 7) and (Intval($Numero / 100000000) <> 9)) {
                         $letras .= (string)"Cientos ";
                     } else {
@@ -163,12 +163,12 @@ class NumTostring
             // '*---> Decenas de Millón
             if (($Numero < 100000000) and ($Numero >= 10000000)) {
                 if (Intval($Numero / 1000000) < 16) {
-                    $tempo = $this->Decenas(Intval($Numero / 1000000));
+                    $tempo = self::Decenas(Intval($Numero / 1000000));
                     $letras .= (string)$tempo;
                     $letras .= (string)" Millones ";
                     $Numero = $Numero - (Intval($Numero / 1000000) * 1000000);
                 } else {
-                    $letras = $letras & $this->Decenas(Intval($Numero / 10000000) * 10);
+                    $letras = $letras & self::Decenas(Intval($Numero / 10000000) * 10);
                     $Numero = $Numero - (Intval($Numero / 10000000) * 10000000);
                     if ($Numero > 1000000) {
                         $letras .= $letras & " y ";
@@ -182,7 +182,7 @@ class NumTostring
                 if ($tempo == 1) {
                     $letras .= (string)" Un Millón ";
                 } else {
-                    $tempo = $this->Unidades(Intval($Numero / 1000000));
+                    $tempo = self::Unidades(Intval($Numero / 1000000));
                     $letras .= (string)$tempo;
                     $letras .= (string)" Millones ";
                 }
@@ -196,7 +196,7 @@ class NumTostring
                 if (($tempo == 1) and ($tempo2 < 1000)) {
                     $letras .= (string)"Cien Mil ";
                 } else {
-                    $tempo = $this->Centenas(Intval($Numero / 100000));
+                    $tempo = self::Centenas(Intval($Numero / 100000));
                     $letras .= (string)$tempo;
                     $tempo = (Intval($Numero / 100000));
                     if (($tempo <> 1) and ($tempo <> 5) and ($tempo <> 7) and ($tempo <> 9)) {
@@ -212,12 +212,12 @@ class NumTostring
             if (($Numero < 100000) and ($Numero >= 10000)) {
                 $tempo = (Intval($Numero / 1000));
                 if ($tempo < 16) {
-                    $tempo = $this->Decenas(Intval($Numero / 1000));
+                    $tempo = self::Decenas(Intval($Numero / 1000));
                     $letras .= (string)$tempo;
                     $letras .= (string)" Mil ";
                     $Numero = $Numero - (Intval($Numero / 1000) * 1000);
                 } else {
-                    $tempo = $this->Decenas(Intval($Numero / 10000) * 10);
+                    $tempo = self::Decenas(Intval($Numero / 10000) * 10);
                     $letras .= (string)$tempo;
                     $Numero = $Numero - (Intval(($Numero / 10000)) * 10000);
                     if ($Numero > 1000) {
@@ -235,7 +235,7 @@ class NumTostring
                 if ($tempo == 1) {
                     //$letras .= (string) "un";
                 } else {
-                    $tempo = $this->Unidades(Intval($Numero / 1000));
+                    $tempo = self::Unidades(Intval($Numero / 1000));
                     $letras .= (string)$tempo;
                 }
                 $letras .= (string)" Mil ";
@@ -248,7 +248,7 @@ class NumTostring
                     $letras = $letras & "Cien ";
                 } else {
                     $temp = (Intval($Numero / 100));
-                    $l2 = $this->Centenas($temp);
+                    $l2 = self::Centenas($temp);
                     $letras .= (string)$l2;
                     if ((Intval($Numero / 100) <> 1) and (Intval($Numero / 100) <> 5) and (Intval($Numero / 100) <> 7) and (Intval($Numero / 100) <> 9)) {
                         $letras .= "Cientos ";
@@ -263,11 +263,11 @@ class NumTostring
             // '*---> Decenas
             if (($Numero < 100) and ($Numero > 9)) {
                 if ($Numero < 16) {
-                    $tempo = $this->Decenas(Intval($Numero));
+                    $tempo = self::Decenas(Intval($Numero));
                     $letras .= $tempo;
                     $Numero = $Numero - Intval($Numero);
                 } else {
-                    $tempo = $this->Decenas(Intval(($Numero / 10)) * 10);
+                    $tempo = self::Decenas(Intval(($Numero / 10)) * 10);
                     $letras .= (string)$tempo;
                     $Numero = $Numero - (Intval(($Numero / 10)) * 10);
                     if ($Numero > 0.99) {
@@ -278,7 +278,7 @@ class NumTostring
 
             // '*---> Unidades
             if (($Numero < 10) and ($Numero > 0.99)) {
-                $tempo = $this->Unidades(Intval($Numero));
+                $tempo = self::Unidades(Intval($Numero));
                 $letras .= (string)$tempo;
 
                 $Numero = $Numero - Intval($Numero);
@@ -293,7 +293,7 @@ class NumTostring
                 // echo ("*");
                 // $Decimales = number_format($Decimales, 2);
                 // echo ($Decimales);
-                // $tempo = $this->Decenas(Intval($Decimales));
+                // $tempo = self::Decenas(Intval($Decimales));
                 // $letras .= (string) $tempo;
                 // $letras .= (string) "centavos";
             } else {
@@ -304,10 +304,10 @@ class NumTostring
             return $letras;
         }
     }
-    public  function decimal($x, $Numero){
+    private static  function decimal($x, $Numero){
         $resultado=$x;
         $Decimales = explode('.',$Numero);
-        $x = $this->NumerosALetras($Decimales[1]);
+        $x = self::NumerosALetras($Decimales[1]);
         $resultado=str_replace(" .",' con ',$resultado.'.'.$x);
 
         return $resultado;
@@ -316,7 +316,7 @@ class NumTostring
     /**
      * favor de teclear a mano la cantidad numerica a NumTostringtir y asignarla a $tt
      */
-    public function string($n)
+    public static function string($n)
     {
         $tt = $n;
 
@@ -325,8 +325,8 @@ class NumTostring
         $Decimales = $tt - Intval($tt);
         $Decimales = $Decimales * 100;
         $Decimales = Intval($Decimales);
-        $x = $this->NumerosALetras($Numero);
-        $x = $this->decimal($x, $n);
+        $x = self::NumerosALetras($Numero);
+        $x = self::decimal($x, $n);
 
         if ($n == 1) {
             $x = 'Uno';
