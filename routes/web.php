@@ -1,8 +1,8 @@
 <?php
 
-use Redlinux\NumTostring\NumTostring\NumTostring;
+use Reddatasrd\NumTostring\NumTostring;
 use Illuminate\Support\Facades\Route;
-use Redlinux\NumTostring\NumTostring\NumTostringFacade;
+use Reddatasrd\NumTostring\NumTostringFacade;
 
 Route::get('/cal', function(){
     $nu=5;

@@ -2,7 +2,7 @@
 /**
  * Libreria de NumTostringsion de numeros
  */
-namespace Redlinux\NumTostring;
+namespace Reddatasrd\NumTostring;
 
 class NumTostring
 {
