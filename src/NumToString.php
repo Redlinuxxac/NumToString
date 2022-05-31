@@ -11,7 +11,7 @@ class NumTostring
      * input $VCentena
      * return $Numeros
      */
-    private function Centenas($VCentena)
+    public  function Centenas($VCentena)
     {
         $Numeros[0] = "Cero";
         $Numeros[1] = "Uno";
@@ -58,7 +58,7 @@ class NumTostring
      * $VUnidad
      * return $tempo
      */
-    private function Unidades($VUnidad)
+    public  function Unidades($VUnidad)
     {
         $Numeros[0] = "Cero";
         $Numeros[1] = "Uno";
@@ -93,7 +93,7 @@ class NumTostring
         return $tempo;
     }
 
-    private function Decenas($VDecena)
+    public  function Decenas($VDecena)
     {
         $Numeros[0] = "Cero";
         $Numeros[1] = "Uno";
@@ -127,7 +127,7 @@ class NumTostring
         return $tempo;
     }
 
-    private function NumerosALetras($Numero)
+    public  function NumerosALetras($Numero)
     {
 
 
@@ -304,7 +304,7 @@ class NumTostring
             return $letras;
         }
     }
-    private function decimal($x, $Numero){
+    public  function decimal($x, $Numero){
         $resultado=$x;
         $Decimales = explode('.',$Numero);
         $x = $this->NumerosALetras($Decimales[1]);
