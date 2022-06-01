@@ -13,6 +13,8 @@ class ExampleTest extends TestCase
      */
     public function test_example()
     {
-        $this->assertTrue(true);
+        $this->get('/cal/{5}')
+        ->assertStatus(200)
+        ->assertSee('Cinco');
     }
 }

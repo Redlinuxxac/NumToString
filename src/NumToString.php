@@ -306,8 +306,8 @@ class NumTostring
     }
     private static  function decimal($x, $Numero){
         $resultado=$x;
-        if(is_float($Numero)){
-            $Decimales = explode('.',$Numero);
+        $Decimales = explode('.',$Numero);
+        if(count($Decimales)==1){}else{
             $x = self::NumerosALetras($Decimales[1]);
             $resultado=str_replace(" .",' con ',$resultado.'.'.$x);
         }
